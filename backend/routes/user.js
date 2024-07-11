@@ -18,7 +18,7 @@ router.post('/signup', async function(req, res){
 
     if(!success){
         return res.status(411).json({
-            message: "Email already taken/incorrect input",
+            message: "Incorrect input",
         })
     }
 
@@ -28,7 +28,7 @@ router.post('/signup', async function(req, res){
 
     if(exsistingUser){
         return res.status(411).json({
-            message: "Email already taken/incorrect inputs"
+            message: "Email already taken"
         })
     }
 
