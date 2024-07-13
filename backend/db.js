@@ -4,7 +4,7 @@ require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URL);
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username:{
         required: true,
         type: String
@@ -23,14 +23,14 @@ const userSchema = mongoose.Schema({
     },
 });
 
-const accoutSchema = mongoose.Schema({
+const accoutSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
     balance: {
-        type: number,
+        type: Number,
         required: true
     }
 })
