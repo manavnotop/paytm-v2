@@ -21,7 +21,7 @@ router.post('/transfer', authMiddleware, async function(req, res){
     session.startTransaction();
     const { to, amount } = req.body;
 
-    const account = await User.findOne({ userId: req.userId }).session(session);
+    const account = await Account.findOne({ userId: req.userId }).session(session);
 
     if(!account || account.balance < amount){
         await session.abortTransaction();
@@ -30,7 +30,7 @@ router.post('/transfer', authMiddleware, async function(req, res){
         })
     }
 
-    const toAccount = await User.findOne({ userId: to }).session(session);
+    const toAccount = await Account.findOne({ userId: to }).session(session);
 
     if(!toAccount){
         await session.abortTransaction();
