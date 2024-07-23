@@ -2,6 +2,7 @@ import { SubHeading } from "../components/SubHeading";
 import { Heading } from "../components/Heading";
 import { InputBox } from "../components/InputBox";
 import { Button } from "../components/Button";
+import { BottonWarning } from "../components/BottonWarning";
 
 export const Signup = () => {
   return (
@@ -15,6 +16,7 @@ export const Signup = () => {
         <InputBox label={"Email"} placeholder={"manavagarwal@gmail.com"} />
         <InputBox label={"Password"} placeholder={"123456"} />
         <Button label={"Sign Up"} />
+        <BottonWarning label={"Already have an account?"} buttonText={"Login"} to={"/signin"} />
         </div>
       </div>
     </div>
